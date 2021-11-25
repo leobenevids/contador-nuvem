@@ -6,11 +6,11 @@ function App() {
   const [valor, setValor] = useState(0)
 
   function aumentar(){
-    setValor (valor + 1)
+    setValor (valor + 2)
   }
 
   function diminuir(){
-    setValor (valor - 1)
+    setValor (valor - 2)
   }
 
   return (
