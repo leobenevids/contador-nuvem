@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { Wrapper, Blanket, Button, Title, Viewer } from './styles/GlobalStyle'
 
 function App() {
+   
+  const [valor, setValor] = useState(0)
+
+  function aumentar(){
+    setValor (valor + 1)
+  }
+
+  function diminuir(){
+    setValor (valor - 1)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Blanket>
+      <Button onClick={diminuir}>-</Button>
+      <Title>clique para aumentar ou diminuir</Title>
+      <Button onClick={aumentar}>+</Button>
+      </Blanket>
+      <Viewer>{valor}</Viewer>
+    </Wrapper>
   );
 }
 
